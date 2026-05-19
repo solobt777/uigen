@@ -1,0 +1,44 @@
+   ▲ Next.js 15.3.3 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.19:3000
+
+ ✓ Starting...
+ ⚠ Invalid next.config.ts options detected: 
+ ⚠     Unrecognized key(s) in object: 'root' at "turbopack"
+ ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+ ✓ Compiled middleware in 78ms
+ ✓ Ready in 747ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.9s
+ GET / 200 in 3213ms
+ GET / 200 in 68ms
+ ✓ Compiled /favicon.ico in 176ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 423ms
+   Reload env: .env
+ GET / 200 in 119ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 249ms
+   Reload env: .env
+ GET / 200 in 124ms
+ GET /favicon.ico?favicon.45db1c09.ico 200 in 253ms
+ GET / 200 in 365ms
+ ✓ Compiled /api/chat in 323ms
+ANTHROPIC_API_KEY is not set (or is still the placeholder). Using the mock provider — responses will be canned. Set a real key in .env to generate components with Claude.
+ POST /api/chat 200 in 13104ms
+ANTHROPIC_API_KEY is not set (or is still the placeholder). Using the mock provider — responses will be canned. Set a real key in .env to generate components with Claude.
+ POST /api/chat 200 in 7368ms
+ANTHROPIC_API_KEY is not set (or is still the placeholder). Using the mock provider — responses will be canned. Set a real key in .env to generate components with Claude.
+ POST /api/chat 200 in 7172ms
+ GET / 200 in 63ms
+ANTHROPIC_API_KEY is not set (or is still the placeholder). Using the mock provider — responses will be canned. Set a real key in .env to generate components with Claude.
+ POST /api/chat 200 in 12757ms
+ GET / 200 in 64ms
+ GET / 200 in 65ms
+ANTHROPIC_API_KEY is not set (or is still the placeholder). Using the mock provider — responses will be canned. Set a real key in .env to generate components with Claude.
+ POST /api/chat 200 in 12482ms
+   Reload env: .env
+ GET / 200 in 153ms
+ GET / 200 in 262ms
+{ error: { type: 'overloaded_error', message: 'Overloaded' } }
+ POST /api/chat 200 in 6704ms
+ GET / 200 in 383ms
+ POST /api/chat 200 in 4854ms
