@@ -40,6 +40,28 @@ jobs:
           additional_permissions: |
             actions: read
 
+         custom_instructions: |
+            The project is already set up with all dependencies installed.
+            The server is already running at localhost:3000. Logs from it
+            are being written to the logs.txt. If needed, you can query the
+            db with the 'aqlite3' cli. If needed, use the mcp__playwright
+            set of tools to launch a browser and interact with the app.
+
+            mcp_config: |
+              {
+                "mcpServers": {
+                  "playwrigth": {
+                    "command": "npx",
+                      "args": ["@playwright/mcp@latest", "--allowed-origins", "localhost:3000;cdn.tailwindcss.com;esm.sh"],
+                    }
+                }
+              }
+  allowed_tools: |
+            Bash(gh pr view --json commits,files -q '.commits[-1].message + "\n\n" + (.files | map("- " + .path) | join("\n"))')
+            Bash(cat logs.txt)
+            aqlite3
+            mcp__playwright, mcp__playwright__goto, mcp__playwright__click, mcp__playwright__fill, mcp__playwright__screenshot, mcp__playwright__close, mcp__playwright__evaluate, mcp__playwright__get_cookies, mcp__playwright__set_cookies, mcp__playwright__get_local_storage, mcp__playwright__set_local_storage, mcp__playwright__get_session_storage, mcp__playwright__set_session_storage, mcp__playwright__get_storage_state, mcp__playwright__set_storage_state, mcp__playwright__upload_file, mcp__playwright__download_file, mcp__playwright__wait_for_selector, mcp__playwright__wait_for_timeout, mcp__playwright__wait_for_event, mcp__playwright__select_option, mcp__playwright__check, mcp__playwright__uncheck, mcp__playwright__hover, mcp__playwright__focus, mcp__playwright__blur, mcp__playwright__press, mcp__playwright__set_viewport_size, mcp__playwright__emulate_media, mcp__playwright__add_cookie, mcp__playwright__clear_cookies, mcp__playwright__clear_local_storage, mcp__playwright__clear_session_storage, mcp__playwright__clear_storage, mcp__playwright__close_browser, mcp__playwright__launch_browser, mcp__playwright__new_page, mcp__playwright__close_page, mcp__playwright__screenshot_page, mcp__playwright__evaluate_page, mcp__playwright__get_cookies_page, mcp__playwright__set_cookies_page, mcp__playwright__get_local_storage_page, mcp__playwright__set_local_storage_page, mcp__playwright__get_session_storage_page, mcp__playwright__set_session_storage_page, mcp__playwright__get_storage_state_page, mcp__playwright__set_storage_state_page, mcp__playwright__upload_file_page, mcp__playwright__download_file_page, mcp__playwright__wait_for_selector_page, mcp__playwright__wait_for_timeout_page, mcp__playwright__wait_for_event_page, mcp__playwright__select_option_page, mcp__playwright__check_page, mcp__playwright__uncheck_page, mcp__playwright__hover_page, mcp__playwright__focus_page, mcp__playwright__blur_page, mcp__playwright__press_page, mcp__playwright__set_viewport_size_page, mcp__playwright_emulate_media_page, mcp__playwright__add_cookie_page, mcp__playwright__clear_cookies_page, mcp__playwright__clear_local_storage_page, mcp__playwright__clear_session_storage_page, mcp__playwright__clear_storage_page, mcp__playwright__close_browser_page, mcp__playwright__launch_browser_page, mcp__playwright__new_page_page, mcp__playwright__close_page_page, mcp__playwright__screenshot_page_page, mcp__playwright__evaluate_page_page, mcp__playwright__get_cookies_page_page, mcp__playwright__set_cookies_page_page, mcp__playwright__get_local_storage_page_page, mcp__playwright__set_local_storage_page_page, mcp__playwright__get_session_storage_page_page, mcp__playwright__set_session_storage_page_page, mcp__playwright__get_storage_state_page_page, mcp__playwright__set_storage_state_page_page, mcp__playwright__upload_file_page_page, mcp__playwright__download_file_page_page, mcp__playwright__wait_for_selector_page_page, mcp__playwright__wait_for_timeout_page_page, mcp__playwright__wait_for_event_page_page, mcp__playwright__select_option_page_page, mcp__playwright__check_page_page, mcp__playwright__uncheck_page_page, mcp__playwright__hover_page_page, mcp__playwright__focus_page_page, mcp__playwright__blur_page_page, mcp__playwright__press_page_page, mcp__playwright__set_viewport_size_page_page, mcp__playwright_emulate_media_page_page
+
           # Optional: Give a custom prompt to Claude. If this is not specified, Claude will perform the instructions specified in the comment that tagged it.
           # prompt: 'Update the pull request description to include a summary of changes.'
 
